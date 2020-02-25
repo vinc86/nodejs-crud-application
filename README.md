@@ -1,2 +1,2 @@
 # nodejs-crud-application
-A simple crud application with NodeJS und MongoDB
+A simple crud application with NodeJS and MongoDB
