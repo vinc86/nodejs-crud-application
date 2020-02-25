@@ -10,14 +10,19 @@ const param = { useUnifiedTopology: true, useNewUrlParser: true }
 const port = 3000;
 const app = express();
 
+//parsing
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+
 const product = require('./routes/product.route');
 app.use('/products', product);
 
 
-
 //connect to db
 
-mongoose.connect(dbUrl, param, ()=>{
+mongoose.connect(dbUrl, param, (err)=>{
+    if(err){console.error("Error: " + err);}
     console.log("Connected to db");
 });
 
